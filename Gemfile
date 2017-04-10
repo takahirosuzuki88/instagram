@@ -56,3 +56,5 @@ gem 'jquery-turbolinks'
 
 # 本番環境にログを出す
 gem 'rails_12factor', group: :production
+
+gem "carrierwave"

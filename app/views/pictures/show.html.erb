@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @picture.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <% if @picture.image_url? %>
+    <div class="thumbnail">
+      <%= image_tag @picture.image_url %>
+    </div>
+  <% end %>
+</p> 
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
