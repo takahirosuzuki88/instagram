@@ -62,3 +62,7 @@ gem 'rails_12factor', group: :production
 
 # login機能
 gem 'devise'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
