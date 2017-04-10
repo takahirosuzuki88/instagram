@@ -11,6 +11,6 @@
 /log/*
 !/log/.keep
 /tmp
-<<<<<<< HEAD
 *.swp
 /public/uploads/*
+.env
