@@ -4,27 +4,26 @@
       <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
 
       <ul>
-      <% @picture.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @picture.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
 
-   <% if @picture.image_url? %>
-      <div class="thumbnail">
-        <%= image_tag @picture.image_url %>
-      </div>
-    <% end %><br>
-    <%= f.label :image_url %><br>
-    <%= f.file_field :image_url %>
-    <%= f.hidden_field :image_url_cache %>
-  </div>
+  <% if @picture.image_url? %>
+    <div class="thumbnail">
+      <%= image_tag @picture.image_url %>
+    </div>
+  <% end %><br>
+  <%= f.label :image_url %><br>
+  <%= f.file_field :image_url %>
+  <%= f.hidden_field :image_url_cache %>
 
   <div class="field">
     <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
@@ -35,9 +34,7 @@
       </label>
     <% end %>
   </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="field">
+    <%= f.submit '投稿', class: "btn btn-primary btn-sm pull-right" %>
   </div>
-
 <% end %>

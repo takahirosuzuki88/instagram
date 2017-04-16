@@ -9,12 +9,23 @@ TWEET FEED STYLES
     max-height:650px;
     overflow:auto;
 }
-.twt-wrapper .media-list .media img {
-    width:64px;
-    height:64px;
-    border:2px solid #e5e7e8;
-}
 .twt-wrapper .media-list .media {
     border-bottom:1px dashed #efefef;
     margin-bottom:25px;
+}
+
+.media-list .timeline-header {
+  height: 64px;
+  padding: 14px 20px;
+}
+
+.media-list .timeline-header img {
+    width:30px;
+    height:30px;
+    border:2px solid #e5e7e8;
+}
+
+.media-list .timeline-picture img {
+  height: 100px;
+  width: 100px;
 }

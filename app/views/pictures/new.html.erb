@@ -1,5 +1,35 @@
-<h1>New Picture</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2>新規画像追加</h2>
+      <br />
+    </div>
+  </div>
 
-<%= render 'form' %>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+      <!-- TWEET WRAPPER START -->
+      <div class="twt-wrapper">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            Twitter Feed Example
+          </div>
+          <div class="panel-body">
 
-<%= link_to 'Back', pictures_path %>
+            <%= render 'form' %>
+
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <!-- TWEET WRAPPER END -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2><%= link_to '戻る', pictures_path %></h2>
+      <br />
+    </div>
+  </div>
+</div>
