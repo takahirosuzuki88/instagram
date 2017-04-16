@@ -2,75 +2,58 @@
 
 <h1>Listing Pictures</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= profile_img(@user) if profile_img(@user) %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Picture', new_picture_path %>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h2>Bootstrap Twitter Feed</h2>
-                <h6>Crafted by <a href="http://www.designbootstrap.com/">DesignBootstrap.com</a> </h6>
-                <br />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
-                <!-- TWEET WRAPPER START -->
-                <div class="twt-wrapper">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Twitter Feed Example
-                        </div>
-                        <div class="panel-body">
-                            <textarea class="form-control" placeholder="Enter here for tweet..." rows="3"></textarea>
-                            <br />
-                            <a href="#" class="btn btn-primary btn-sm pull-right">Tweet</a>
-                            <div class="clearfix"></div>
-                            <hr />
-                            <ul class="media-list">
-
-
-                              <% @pictures.each do |picture| %>
-
-                                <li class="media">
-                                  <a href="#" class="pull-left">
-                                    <%= image_tag picture.image_url %>
-                                  </a>
-                                  <div class="media-body">
-                                    <span class="text-muted pull-right">
-                                      <small class="text-muted">30 min ago</small>
-                                    </span>
-                                    <strong class="text-success">@ Rexona Kumi</strong>
-                                    <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
-                                    </p>
-                                  </div>
-                                </li>
-                              <% end %>
-
-                            </ul>
-                            <span class="text-danger">237K users active</span>
-                        </div>
-                    </div>
-                </div>
-                 <!-- TWEET WRAPPER END -->
-            </div>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2>Bootstrap Twitter Feed</h2>
+      <h6>Crafted by <a href="http://www.designbootstrap.com/">DesignBootstrap.com</a> </h6>
+      <br />
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
+      <!-- TWEET WRAPPER START -->
+      <div class="twt-wrapper">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            Twitter Feed Example
+          </div>
+          <div class="panel-body">
+            <textarea class="form-control" placeholder="Enter here for tweet..." rows="3"></textarea>
+            <br />
+            <%= link_to '画像を追加する', new_picture_path, :class => "btn btn-primary btn-sm pull-right" %>
+            <div class="clearfix"></div>
+            <hr />
+            <ul class="media-list">
+
+              <% @pictures.each do |picture| %>
+
+                <li class="media">
+                  <a href="#" class="pull-left">
+                    <%= profile_img(picture.user) if profile_img(picture.user) %>
+                  </a>
+                  <div class="media-body">
+                    <span class="text-muted pull-right">
+                      <small class="text-muted">30 min ago</small>
+                    </span>
+                    <strong class="text-success">@<%= picture.user.name %></strong>
+                    <p><%= image_tag picture.image_url %></p>
+                  </div>
+                </li>
+                <%= link_to '', picture, class: 'fa fa-image fa-fw' %>
+                <%= link_to '', edit_picture_path(picture), class: 'fa fa-edit fa-fw' %>
+                <%= link_to '', picture, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash fa-fw' %>
+              <% end %>
+
+            </ul>
+            <span class="text-danger">237K users active</span>
+          </div>
+        </div>
+      </div>
+      <!-- TWEET WRAPPER END -->
+    </div>
+  </div>
+</div>
 
 
