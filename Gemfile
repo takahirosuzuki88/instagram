@@ -49,6 +49,9 @@ end
 
 group :development do
   gem 'dotenv-rails'
+
+  # メール送信機能
+  gem 'letter_opener_web'
 end
 
 gem 'twitter-bootstrap-rails'
@@ -57,6 +60,12 @@ gem 'jquery-turbolinks'
 # 本番環境にログを出す
 gem 'rails_12factor', group: :production
 
-## login機能
+# login機能
 gem 'devise'
-gem "carrierwave"
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+gem 'carrierwave'
+gem 'rmagick'
