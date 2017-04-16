@@ -2,23 +2,23 @@
 <html>
   <head>
     <title>Instagram</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
 
+    <%= render 'shared/navbar' %>
+
     <p class="flash"><%= notice %><%= alert %></p>
+
     <!-- ログイン・ログアウト操作 -->
-    <% if user_signed_in? %>
-      <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path  %></li>
-      <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-    <% end %>
 
     <%= yield %>
+
+    <%= render 'shared/footer' %>
 
   </body>
 </html>

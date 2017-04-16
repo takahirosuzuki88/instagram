@@ -25,6 +25,7 @@
     <%= f.file_field :image_url %>
     <%= f.hidden_field :image_url_cache %>
   </div>
+
   <div class="field">
     <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
     <% if @picture.persisted? && @picture.image_url? %>
