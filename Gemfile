@@ -66,3 +66,6 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+
+gem 'carrierwave'
+gem 'rmagick'
