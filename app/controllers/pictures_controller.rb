@@ -5,6 +5,7 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
+    @user = current_user
     @pictures = Picture.all
   end
 
