@@ -12,22 +12,12 @@
 
   <tbody>
     <%= profile_img(@user) if profile_img(@user) %>
-    <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= picture.title %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
   </tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Picture', new_picture_path %>
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -52,50 +42,27 @@
                             <div class="clearfix"></div>
                             <hr />
                             <ul class="media-list">
+
+
+                              <% @pictures.each do |picture| %>
+
                                 <li class="media">
-                                    <a href="#" class="pull-left">
-                                        <img src="assets/img/1.png" alt="" class="img-circle">
-                                    </a>
-                                    <div class="media-body">
-                                        <span class="text-muted pull-right">
-                                            <small class="text-muted">30 min ago</small>
-                                        </span>
-                                        <strong class="text-success">@ Rexona Kumi</strong>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
-                                        </p>
-                                    </div>
+                                  <a href="#" class="pull-left">
+                                    <%= image_tag picture.image_url %>
+                                  </a>
+                                  <div class="media-body">
+                                    <span class="text-muted pull-right">
+                                      <small class="text-muted">30 min ago</small>
+                                    </span>
+                                    <strong class="text-success">@ Rexona Kumi</strong>
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Lorem ipsum dolor sit amet, <a href="#"># consectetur adipiscing </a>.
+                                    </p>
+                                  </div>
                                 </li>
-                                <li class="media">
-                                    <a href="#" class="pull-left">
-                                        <img src="assets/img/2.png" alt="" class="img-circle">
-                                    </a>
-                                    <div class="media-body">
-                                        <span class="text-muted pull-right">
-                                            <small class="text-muted">30 min ago</small>
-                                        </span>
-                                        <strong class="text-success">@ John Doe</strong>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Lorem ipsum dolor <a href="#"># ipsum dolor </a>adipiscing elit.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="media">
-                                    <a href="#" class="pull-left">
-                                        <img src="assets/img/3.png" alt="" class="img-circle">
-                                    </a>
-                                    <div class="media-body">
-                                        <span class="text-muted pull-right">
-                                            <small class="text-muted">30 min ago</small>
-                                        </span>
-                                        <strong class="text-success">@ Madonae Jonisyi</strong>
-                                        <p>
-                                            Lorem ipsum dolor <a href="#"># sit amet</a> sit amet, consectetur adipiscing elit.
-                                        </p>
-                                    </div>
-                                </li>
+                              <% end %>
+
                             </ul>
                             <span class="text-danger">237K users active</span>
                         </div>
