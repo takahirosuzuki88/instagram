@@ -1,18 +1,16 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h2><%= @user.name %>さんのタイムライン</h2>
-      <br />
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
       <!-- TWEET WRAPPER START -->
       <div class="twt-wrapper">
-        <div class="panel panel-info">
-          <div class="panel-heading">Feed</div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><%= @user.name %>さんのタイムライン</div>
           <div class="panel-body">
+            <ul class="media-list">
+              <%= link_to '新規画像投稿', new_picture_path, class: "btn btn-block btn-default" %>
+            </ul>
+
             <ul class="media-list">
               <% @pictures.each do |picture| %>
                 <li class="media">
