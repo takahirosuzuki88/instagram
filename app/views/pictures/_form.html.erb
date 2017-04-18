@@ -26,15 +26,6 @@
   <%= f.hidden_field :image_url_cache %>
 
   <div class="field">
-    <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
-    <% if @picture.persisted? && @picture.image_url? %>
-      <label>
-        <%= f.check_box :remove_image_url %>
-        画像を削除
-      </label>
-    <% end %>
-  </div>
-  <div class="field">
     <%= f.submit '投稿', class: "btn btn-primary btn-block" %>
   </div>
 <% end %>
