@@ -4,7 +4,7 @@
       <!-- TWEET WRAPPER START -->
       <div class="twt-wrapper">
         <div class="panel panel-default">
-          <div class="panel-heading">パスワード再発行</div>
+          <div class="panel-heading">ユーザ情報編集</div>
           <div class="panel-body">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= devise_error_messages! %>
@@ -26,7 +26,7 @@
 
                 <div class="field">
                   <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-                  <%= f.password_field :password, autocomplete: "off" %>
+                  <%= f.password_field :password, class: "form-control",  autocomplete: "off" %>
                   <% if @minimum_password_length %>
                     <br />
                     <em><%= @minimum_password_length %> characters minimum</em>
@@ -35,12 +35,12 @@
 
                 <div class="field">
                   <%= f.label :password_confirmation %><br />
-                  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                  <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
                 </div>
 
                 <div class="field">
                   <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-                  <%= f.password_field :current_password, autocomplete: "off" %>
+                  <%= f.password_field :current_password, class: "form-control", autocomplete: "off" %>
                 </div>
               <% end %>
 
