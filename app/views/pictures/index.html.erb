@@ -4,9 +4,8 @@
     <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
       <!-- TWEET WRAPPER START -->
       <div class="twt-wrapper">
-        <div class="panel panel-default">
-          <div class="panel-heading"><%= @user.name %>さんのタイムライン</div>
-          <div class="panel-body">
+          <div class=""><%= @user.name %>さんのタイムライン</div>
+          <div class="">
             <ul class="media-list">
               <%= link_to '新規画像投稿', new_picture_path, class: "btn btn-block btn-default" %>
             </ul>
@@ -24,13 +23,12 @@
                     <p><%= image_tag(picture.image_url, class: 'timeline-picture') %></p>
                   </div>
                 </li>
-                <%= link_to '', picture, class: 'fa fa-image fa-fw' %>
-                <%= link_to '', edit_picture_path(picture), class: 'fa fa-edit fa-fw' %>
-                <%= link_to '', picture, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash fa-fw' %>
+                <%= link_to '詳細', picture, class: '' %>
+                <%= link_to '編集', edit_picture_path(picture), class: '' %>
+                <%= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' }, class: '' %>
               <% end %>
             </ul>
           </div>
-        </div>
       </div>
       <!-- TWEET WRAPPER END -->
     </div>

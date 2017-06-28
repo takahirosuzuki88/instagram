@@ -1,10 +1,7 @@
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
 			<div class="input-group">
-					<span class="input-group-addon addon-<%= provider %>">
-            <i class="fa fa-fw fa-2x fa-<%= provider %> fa-fw"></i>
-          </span>
-          <%= link_to "Sign in with #{provider}", omniauth_authorize_path(resource_name, provider) , class: "btn btn-lg btn-block btn-#{provider}", style: "color: white;" %>
+          <%= link_to "Sign in with #{provider}", omniauth_authorize_path(resource_name, provider) %>
       </div>
   <% end -%>
 <% end -%>
